@@ -43,7 +43,7 @@ public class p1021 {
         resto = calculaResto(resto, 0.05);
         umCent = (int) Math.round(resto / 0.01);
 
-        System.out.println("NOTAS");
+        System.out.println("NOTAS:");
         System.out.println(cem + " nota(s) de R$ 100.00");
         System.out.println(cinquenta + " nota(s) de R$ 50.00");
         System.out.println(vinte + " nota(s) de R$ 20.00");
@@ -51,7 +51,7 @@ public class p1021 {
         System.out.println(cinco + " nota(s) de R$ 5.00");
         System.out.println(dois + " nota(s) de R$ 2.00");
 
-        System.out.println("MOEDAS");
+        System.out.println("MOEDAS:");
         System.out.println(um + " moeda(s) de R$ 1.00");
         System.out.println(cinquentaCents + " moeda(s) de R$ 0.50");
         System.out.println(vinteECincoCents + " moeda(s) de R$ 0.25");
