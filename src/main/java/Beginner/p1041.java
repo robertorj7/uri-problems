@@ -7,27 +7,35 @@ public class p1041 {
         Scanner sc = new Scanner(System.in);
         double x = sc.nextDouble(), y = sc.nextDouble();
 
-        if (x == 0 && y ==0) {
+        if (x == 0 && y == 0) {
             System.out.println("Origem");
         }
 
-        if (x > 0) {
-            if (y > 0) {
-                System.out.println("Q1");
-            } else if (y == 0){
-                System.out.println("Eixo X");
-            } else {
-                System.out.println("Q4");
-            }
-        } else if (x < 0) {
-            if (y > 0) {
-                System.out.println("Q2");
-            } else if (y == 0){
-                System.out.println("Eixo X");
-            } else {
-                System.out.println("Q3");
-            }
-        } else if (x == 0 && y != 0) {
+        if (x > 0 && y > 0) {
+            System.out.println("Q1");
+        }
+
+        if (x > 0 && y == 0){
+            System.out.println("Eixo X");
+        }
+
+        if (x > 0 && y < 0) {
+            System.out.println("Q4");
+        }
+
+        if (x < 0 && y > 0) {
+            System.out.println("Q2");
+        }
+
+        if (x < 0 && y == 0){
+            System.out.println("Eixo X");
+        }
+
+        if (x < 0 && y < 0) {
+            System.out.println("Q3");
+        }
+
+        if (x == 0 && y != 0) {
             System.out.println("Eixo Y");
         }
     }
