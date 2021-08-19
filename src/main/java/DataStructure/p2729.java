@@ -1,30 +1,32 @@
 package DataStructure;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class p2729 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        List<String> lista = new ArrayList<>();
-
         int quantidade = sc.nextInt();
+        sc.nextLine();
 
-        for (int i = 0; i < quantidade; i++) {
-            String item = sc.next();
+        Set<String> lista;
 
-            if (!lista.contains(item)) {
+        for (int i=0; i<quantidade; i++) {
+            lista = new TreeSet<>();
+
+            for (String item: sc.nextLine().split(" ")) {
                 lista.add(item);
             }
-        }
 
-        Collections.sort(lista);
-
-        for (String item : lista) {
-            System.out.println(item);
+            Iterator<String> it = lista.iterator();
+            StringBuilder builder = new StringBuilder();
+            while (it.hasNext()) {
+                builder.append(it.next() + " ");
+            }
+            System.out.println(builder.toString().trim());
         }
     }
 }
