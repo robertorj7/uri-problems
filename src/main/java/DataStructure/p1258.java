@@ -1,42 +1,35 @@
 package DataStructure;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class p1258 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        int linhas = Integer.parseInt(st.nextToken());
+        Scanner sc = new Scanner(System.in);
+        int quantidade = sc.nextInt();
+        String nome, linhaUniforme, corUniforme, tamUniforme;
         List<Uniforme> listaUniformes = new ArrayList<>();
 
-        for (int i = 0; i <= linhas; i++) {
-            String next = br.readLine();
-            if(next.equals("0")) {
-                break;
-            }
-            Uniforme uniforme = new Uniforme();
-            uniforme.setNomeEstudante(next);
-
-            String[] camiseta = br.readLine().split(" ");
-            uniforme.setCorUniforme(camiseta[0]);
-            uniforme.setTamUniforme(camiseta[1]);
-            listaUniformes.add(uniforme);
+        for (int i = 0; i < quantidade; i++) {
+            nome = sc.nextLine();
+            linhaUniforme = sc.nextLine();
+            corUniforme = linhaUniforme.split(" ")[0];
+            tamUniforme = linhaUniforme.split(" ")[1];
         }
-        Comparator<Uniforme> comparator = Comparator
-                .comparing(Uniforme::getCorUniforme).reversed()
-                .thenComparing(Uniforme::getTamUniforme).reversed()
-                .thenComparing(Uniforme::getNomeEstudante);
-
-        listaUniformes.stream().sorted(comparator).forEach(System.out::println);
     }
 
     public static class Uniforme {
         private String nomeEstudante;
         private String corUniforme;
         private String tamUniforme;
+
+        public Uniforme(String nomeEstudante, String corUniforme, String tamUniforme) {
+            this.nomeEstudante = nomeEstudante;
+            this.corUniforme = corUniforme;
+            this.tamUniforme = tamUniforme;
+        }
 
         public String getNomeEstudante() {
             return nomeEstudante;
