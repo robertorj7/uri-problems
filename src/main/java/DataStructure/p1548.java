@@ -1,5 +1,6 @@
 package DataStructure;
 
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class p1548 {
@@ -22,6 +23,14 @@ public class p1548 {
         for (int i=0; i<casos; i++) {
             int numClientes = sc.nextInt();
 
+        }
+    }
+
+    public static class numSenhaComparator implements Comparator<Integer> {
+        @Override
+        public int compare(Integer n1, Integer n2) {
+            int result = n1.compareTo(n2);
+            return -result;
         }
     }
 }
