@@ -12,12 +12,18 @@ public class p1258 {
         String nome, linhaUniforme, corUniforme, tamUniforme;
         List<Uniforme> listaUniformes = new ArrayList<>();
 
-        for (int i = 0; i < quantidade; i++) {
-            nome = sc.nextLine();
-            linhaUniforme = sc.nextLine();
-            corUniforme = linhaUniforme.split(" ")[0];
-            tamUniforme = linhaUniforme.split(" ")[1];
+        for (int i=0; i<quantidade; i++) {
+            nome = sc.next();
+            linhaUniforme = sc.next();
+//            corUniforme = linhaUniforme.split(" ")[0];
+//            tamUniforme = linhaUniforme.split(" ")[1];
+
+//            listaUniformes.add(new Uniforme(nome, corUniforme, tamUniforme));
+            System.out.println(nome);
+            System.out.println(linhaUniforme);
         }
+
+//        System.out.println(listaUniformes);
     }
 
     public static class Uniforme {
