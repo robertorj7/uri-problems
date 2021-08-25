@@ -7,12 +7,16 @@ import java.util.Scanner;
 public class p1244 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
+        int num = Integer.parseInt(sc.nextLine());
 
         for (int i=0; i<num; i++) {
             List<String> lista = new ArrayList<>();
-            String linha = sc.nextLine();
-            System.out.println(linha);
+            String palavras = sc.nextLine();
+            String[] arrayPalavras = palavras.split(" ");
+
+            for (int j=0; j<arrayPalavras.length; j++) {
+
+            }
         }
     }
 
