@@ -16,6 +16,7 @@ public class p1244 {
 
             for (int j=0; j<arrayPalavras.length; j++) {
                 String palavra = palavras.split(" ")[j];
+
             }
         }
     }
