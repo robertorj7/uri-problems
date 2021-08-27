@@ -33,7 +33,31 @@ public class p2813 {
                     usadoCasa = true;
                 }
             } else {
+                if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("sol")) {
+                    if (usadoCasa == true) {
+                        usadoCasa = false;
+                    } else {
+                        comprarCasa++;
+                    }
+                    usadoEscritorio = true;
 
+                }
+
+                if (listaIda.get(i).equals("sol") && listaVolta.get(i).equals("chuva")) {
+                    if (usadoEscritorio == true) {
+                        usadoEscritorio = false;
+                    } else {
+                        comprarEscritorio++;
+                    }
+                    usadoCasa = true;
+                }
+
+                if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("chuva")) {
+                    if (usadoCasa == false) {
+                        comprarCasa++;
+                        usadoCasa = true;
+                    }
+                }
             }
         }
         System.out.println(comprarCasa + " " + comprarEscritorio);
