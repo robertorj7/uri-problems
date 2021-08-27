@@ -19,9 +19,7 @@ public class p2813 {
             if (i == 0) {
                 if (listaIda.get(i).equals("chuva")) {
                     comprarCasa++;
-                }
-
-                if (listaVolta.get(i).equals("chuva") && listaIda.get(i).equals("sol")) {
+                } else if (listaVolta.get(i).equals("chuva") && listaIda.get(i).equals("sol")) {
                     comprarEscritorio++;
                 }
             } else {
