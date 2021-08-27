@@ -18,29 +18,22 @@ public class p2813 {
             listaVolta.add(sc.next());
 
             if (i == 0) {
-                if (listaIda.get(i).equals("chuva")) {
+                if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("sol")) {
                     comprarCasa++;
-                } else if (listaVolta.get(i).equals("chuva") && listaIda.get(i).equals("sol")) {
-                    comprarEscritorio++;
-                }
-            } else {
-                if (listaIda.get(i).equals("chuva") && listaVolta.get(i-1).equals("sol")) {
-                    if (usadoEscritorio == false) {
-                        comprarCasa++;
-                        usadoEscritorio = true;
-                    } else {
-                        usadoEscritorio = false;
-                    }
+                    usadoEscritorio = true;
                 }
 
-                if (listaVolta.get(i-1).equals("chuva") && listaIda.get(i).equals("sol")) {
-                    if (usadoCasa == false) {
-                        comprarEscritorio++;
-                        usadoCasa = true;
-                    } else {
-                        usadoCasa = false;
-                    }
+                if (listaIda.get(i).equals("sol") && listaVolta.get(i).equals("chuva")) {
+                    comprarEscritorio++;
+                    usadoCasa = true;
                 }
+
+                if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("chuva")) {
+                    comprarCasa++;
+                    usadoCasa = true;
+                }
+            } else {
+
             }
         }
         System.out.println(comprarCasa + " " + comprarEscritorio);
