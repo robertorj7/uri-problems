@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class p2813 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         int n = sc.nextInt();
         int comprarCasa = 0, comprarEscritorio = 0, usadosCasa = 0, usadosEscritorio = 0;
         List<String> listaIda = new ArrayList<>();
