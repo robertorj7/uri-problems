@@ -8,8 +8,7 @@ public class p2813 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int comprarCasa = 0, comprarEscritorio = 0;
-        boolean usadoCasa = false, usadoEscritorio = false;
+        int comprarCasa = 0, comprarEscritorio = 0, usadosCasa = 0, usadosEscritorio = 0;
         List<String> listaIda = new ArrayList<>();
         List<String> listaVolta = new ArrayList<>();
 
@@ -20,42 +19,42 @@ public class p2813 {
             if (i == 0) {
                 if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("sol")) {
                     comprarCasa++;
-                    usadoEscritorio = true;
+                    usadosEscritorio++;
                 }
 
                 if (listaIda.get(i).equals("sol") && listaVolta.get(i).equals("chuva")) {
                     comprarEscritorio++;
-                    usadoCasa = true;
+                    usadosCasa++;
                 }
 
                 if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("chuva")) {
                     comprarCasa++;
-                    usadoCasa = true;
+                    usadosCasa++;
                 }
             } else {
                 if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("sol")) {
-                    if (usadoCasa == true) {
-                        usadoCasa = false;
+                    if (usadosCasa > 0) {
+                        usadosCasa--;
                     } else {
                         comprarCasa++;
                     }
-                    usadoEscritorio = true;
+                    usadosEscritorio++;
 
                 }
 
                 if (listaIda.get(i).equals("sol") && listaVolta.get(i).equals("chuva")) {
-                    if (usadoEscritorio == true) {
-                        usadoEscritorio = false;
+                    if (usadosEscritorio > 0) {
+                        usadosEscritorio--;
                     } else {
                         comprarEscritorio++;
                     }
-                    usadoCasa = true;
+                    usadosCasa++;
                 }
 
                 if (listaIda.get(i).equals("chuva") && listaVolta.get(i).equals("chuva")) {
-                    if (usadoCasa == false) {
+                    if (usadosCasa == 0) {
                         comprarCasa++;
-                        usadoCasa = true;
+                        usadosCasa++;
                     }
                 }
             }
@@ -63,3 +62,4 @@ public class p2813 {
         System.out.println(comprarCasa + " " + comprarEscritorio);
     }
 }
+
