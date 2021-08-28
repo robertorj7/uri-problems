@@ -15,13 +15,23 @@ public class p1190 {
             }
         }
 
-        for (int i=7; i<=11; i++) {
-            for (int j=1; j<=5; j++) {
-
+        for (int j=1; j<=5; j++) {
+            for (int i=11; i>=12-j; i--) {
+                soma += Matriz[i][j];
             }
         }
 
-        System.out.println(String.format("%.1f", soma));
+        for (int j=10; j>=6; j--) {
+            for (int i=11; i>=j+1; i--) {
+                soma += Matriz[i][j];
+            }
+        }
+
+        if (entrada == 'S') {
+            System.out.println(String.format("%.1f", soma));
+        } else if (entrada == 'M') {
+            System.out.println(String.format("%.1f", soma / 30));
+        }
     }
 
 }
