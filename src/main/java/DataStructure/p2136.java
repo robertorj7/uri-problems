@@ -10,21 +10,15 @@ public class p2136 {
 
         Set<String> listaSim = new HashSet<>();
         Set<String> listaNao = new HashSet<>();
-        String nome, decisao;
+        String nome, decisao, linha = sc.nextLine();
 
-        while (!sc.nextLine().equals("FIM")) {
-            nome = sc.next();
-            decisao = sc.next();
-
-            if (decisao == "SIM") {
-                listaSim.add(nome);
-            } else {
-                listaNao.add(nome);
-            }
+        while (!linha.equals("FIM")) {
+            nome = linha.split(" ")[0];
+            decisao = linha.split(" ")[1];
+            System.out.println(nome + " " + decisao);
+            linha = sc.nextLine();
         }
 
-        System.out.println(listaSim);
-        System.out.println(listaNao);
     }
 
 }
