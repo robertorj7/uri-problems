@@ -15,9 +15,18 @@ public class p2136 {
         while (!linha.equals("FIM")) {
             nome = linha.split(" ")[0];
             decisao = linha.split(" ")[1];
-            System.out.println(nome + " " + decisao);
+
+            if (decisao.equals("SIM")) {
+                listaSim.add(nome);
+            } else if (decisao.equals("NAO")) {
+                listaNao.add(nome);
+            }
+
             linha = sc.nextLine();
         }
+
+        System.out.println(listaSim);
+        System.out.println(listaNao);
 
     }
 
