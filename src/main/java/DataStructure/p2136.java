@@ -1,6 +1,7 @@
 package DataStructure;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -33,6 +34,12 @@ public class p2136 {
             }
         }
 
+        Collections.sort(listaSim);
+        Collections.sort(listaNao);
+
+        listaSim.forEach(System.out::println);
+        listaNao.forEach(System.out::println);
+        System.out.println("\nAmigo do Pablo:");
         System.out.println(ganhador);
     }
 
