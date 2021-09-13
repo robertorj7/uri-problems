@@ -1,7 +1,6 @@
 package DataStructure;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,9 +27,13 @@ public class p2136 {
             linha = sc.nextLine();
         }
 
-        System.out.println(listaSim);
-        System.out.println(listaNao);
+        for (String item : listaSim) {
+            if (item.length() > ganhador.length()) {
+                ganhador = item;
+            }
+        }
 
+        System.out.println(ganhador);
     }
 
 }
