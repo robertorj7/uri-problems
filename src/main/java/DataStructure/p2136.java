@@ -10,7 +10,7 @@ public class p2136 {
 
         Set<String> listaSim = new HashSet<>();
         Set<String> listaNao = new HashSet<>();
-        String nome, decisao, linha = sc.nextLine();
+        String nome, decisao, ganhador, linha = sc.nextLine();
 
         while (!linha.equals("FIM")) {
             nome = linha.split(" ")[0];
@@ -25,8 +25,9 @@ public class p2136 {
             linha = sc.nextLine();
         }
 
-        System.out.println(listaSim);
-        System.out.println(listaNao);
+        for (String item : listaSim) {
+            System.out.println(item);
+        }
 
     }
 
