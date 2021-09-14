@@ -9,9 +9,9 @@ public class p2087 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int entrada = sc.nextInt();
-        List<String> lista = new ArrayList<>();
 
         while (entrada != 0) {
+            List<String> lista = new ArrayList<>();
             for (int i=0; i<entrada; i++) {
                 lista.add(sc.next());
             }
