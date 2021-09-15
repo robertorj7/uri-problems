@@ -1,25 +1,33 @@
 package AdHoc;
 
 import java.util.Scanner;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 
 public class p2401 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int num = sc.nextInt();
-        double resultado = 1.0;
+        String operacao;
+        String[] linha;
+        int numero = Integer.parseInt(sc.nextLine());
+        BigDecimal resultado = new BigDecimal("1.0");
 
-        for (int i=0; i<num; i++) {
-            int valor = Integer.parseInt(sc.next());
-            char operacao = sc.next().charAt(0);
+        for (int i = 0; i < numero; ++i) {
+            linha = sc.nextLine().trim().split(" ");
 
-            if (operacao == '/') {
-                resultado /= valor;
-            } else if (operacao == '*') {
-                resultado *= valor;
+            BigDecimal numAtual = new BigDecimal(linha[0]);
+            operacao = linha[1];
+
+            if (operacao.equals("*")) {
+                resultado = resultado.multiply(numAtual);
+            } else if (operacao.equals("/")) {
+                resultado = resultado.divide(numAtual, MathContext.DECIMAL128);
             }
         }
 
-        System.out.println(Math.round(resultado));
+        System.out.println(resultado.setScale(0, RoundingMode.DOWN));
+        sc.close();
     }
 }
